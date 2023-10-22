@@ -136,7 +136,7 @@ def brench(config_path, files, jobs):
                     status = 'missing'
 
                 # Report the result.
-                bench, _ = os.path.splitext(os.path.basename(fn))
+                bench = os.path.relpath(fn, os.getcwd())
                 writer.writerow([
                     bench,
                     name,
